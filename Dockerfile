@@ -1,12 +1,10 @@
 FROM python:3.9
 
-COPY . /titanic
-
 WORKDIR /titanic
 
-RUN pip install -r requirements.txt
+ADD . /titanic
 
-EXPOSE 5000
+RUN pip install -r requirements.txt
 
 ENTRYPOINT [ "python" ]
 CMD [ "app.py" ]
