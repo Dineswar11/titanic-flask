@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&family=Poppins&family=Roboto:ital,wght@0,400;1,400;1,500&display=swap');
+
+/* Root variables */
+
+:root{
+   --font-roboto: 'Roboto', sans-serif;
+   --font-primary: 'Poppins', sans-serif; 
+   --font-heading:'Montserrat';
+   --red:#ff2e2e;  
+   --dark-red: #C85454;
+   --green-:#2ec726;
+   --background:#180606;
+
+}
+*,*::after,*::before{
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   color: #fff;
+   font-family: var(--font-primary);
+   transition: 0.21s;
+   transition-timing-function: ease-in;
+
+}
+
+html,body{
+   overflow-x: auto!important;
+}
+
+.container{
+   max-width: 99vw;
+}
+.heading{
+   text-align: center;
+   margin: 3%;
+   font-family: var(--font-heading);
+   text-transform: uppercase;
+   /* animation */
+   animation-name:top_load;
+   animation-duration: 1.2s;
+   animation-timing-function: ease-out;
+   animation-delay: 2.1s;
+   animation-fill-mode: forwards;
+   opacity: 0;  
+
+}
+table{
+   /* animation */
+   animation-name:top_load;
+   animation-duration: 1.2s;
+   animation-timing-function: cubic-bezier(0.18, 0.89, 0.32, 1.28);
+   animation-delay: .3s;
+   animation-fill-mode: forwards;
+   opacity: 0;  
+}
+
+.not-survive{
+   color: var(--red);
+}
+.survive{
+   color: var(--green-);
+}
+.btn-result{
+   background-color: var(--dark-red)!important;
+   padding: 9px 30px;
+   border-radius: 9px;
+   text-transform: uppercase;
+   border: none;
+   display: block;
+   margin: 40px auto;
+   text-align: center;
+   width: 21%;
+   color: #fff;
+   /* animation */
+   animation-name:img_load;
+   animation-duration: 1.2s;
+   animation-timing-function: ease;
+   animation-delay: .3s;
+   animation-fill-mode: forwards;
+   opacity: 0;  
+}
+a{
+   text-decoration: none;
+   font-weight: 400;
+
+}
+.btn-result:hover{
+   background-color: var(--dark-red)!important;
+   padding: 9px 54px;
+   width: 27%;
+   color: #fff;
+}
+
+.specify-width{
+   max-width: 81vw!important;
+   overflow: hidden!important;
+}
+
+
+/* MOBILE */
+@media (max-width: 575.98px){
+   .btn-result{
+      width: 50%;
+   }
+   .btn-result:hover{
+      width: 60%;
+   }
+   .specify-width{
+      max-width: 60vw!important;
+      overflow: hidden!important;
+   }
+}
+
+
+
+@keyframes top_load{
+   from{
+      opacity: 0;
+      transform: translateY(-200px);
+   }
+   to{
+   opacity: 1;
+   }
+   
+
+}
+@keyframes img_load {
+   from{
+      opacity: 0;
+      transform: translate(690px);
+   }
+   to{
+      opacity: 1;
+   }
+}
